@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(m, ps, pt) {
+        //m = 20 개수 시간
+        let answer = 0;
+        let length = ps.length;
+
+        function DFS(v, sum, time) {
+          if (time > m) return;
+          if (v === length) {
+            answer = Math.max(answer, sum);
+          } else {
+            DFS(v + 1, sum, time);
+            DFS(v + 1, sum + ps[v], time + pt[v]);
+          }
+        }
+        DFS(0, 0, 0);
+        return answer;
+      }
+
+      let ps = [10, 25, 15, 6, 7];
+      let pt = [5, 12, 8, 3, 4];
+      console.log(solution(20, ps, pt));
+    </script>
+  </body>
+</html>
