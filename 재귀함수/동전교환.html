@@ -12,8 +12,7 @@
 
         function DFS(L, sum) {
           if (sum > m) return;
-          if (L >= answer) return;
-
+          if (L >= answer) return; //이미 레벨이 15로 충족했으니 커트
           if (sum === m) {
             answer = Math.min(answer, L);
           } else {
@@ -22,7 +21,6 @@
             }
           }
         }
-
         DFS(0, 0);
         return answer;
       }
