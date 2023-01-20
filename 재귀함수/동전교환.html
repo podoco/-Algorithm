@@ -17,6 +17,7 @@
             answer = Math.min(answer, L);
           } else {
             for (let i = 0; i < n; i++) {
+              //배열길이만큼
               DFS(L + 1, sum + arr[i]);
             }
           }
