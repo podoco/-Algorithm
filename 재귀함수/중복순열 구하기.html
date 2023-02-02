@@ -8,7 +8,7 @@
       function solution(n, m) {
         // 3 , 2
         let answer = [];
-        let tmp = Array(m).fill(0); // 0 0
+        let tmp = new Array(m).fill(0); // 0 0
         function DFS(L) {
           if (L === m) {
             answer.push(tmp.slice());
