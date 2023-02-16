@@ -9,11 +9,14 @@
         let answer = 0;
         let graph = Array.from(Array(n + 1), () => Array()); //[ [],[],[],[],[],[]]
         let ch = Array.from({ length: n + 1 }, () => 0); //체크 //[0,0,0,0,0,0]
+
         path = [];
+
         //인접행렬 만들기
         for (let [a, b] of arr) {
           graph[a].push(b);
         }
+        console.log("그래프", graph);
 
         function DFS(v) {
           if (v === n) {
